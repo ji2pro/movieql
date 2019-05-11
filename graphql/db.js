@@ -1,7 +1,7 @@
 let movies = [
   {
     id: 0,
-    name: "Star Wars - The new one",
+    name: "Leon",
     score: 75
   },
   {
@@ -16,27 +16,22 @@ let movies = [
   },
   {
     id: 3,
-    name: "The Godfather",
+    name: "The Mask",
     score: 87
-  },
-  {
-    id: 4,
-    name: "Mario",
-    score: 55
   }
 ];
 
 export const getMovies = () => movies;
 
 export const getById = id => {
-  const filteredMovies = movies.filter(movie => movie.id === String(id));
+  const filteredMovies = movies.filter(movie => movie.id === id);
   return filteredMovies[0];
 };
 
 export const deleteMovie = id => {
-  const cleanedMovies = movies.filter(movie => movie.id !== String(id));
+  const cleanedMovies = movies.filter(movie => movie.id !== id);
   if (movies.length > cleanedMovies.length) {
-    movie = cleanedMovies;
+    movies = cleanedMovies;
     return true;
   } else {
     return false;
